@@ -30,6 +30,7 @@ const Blogs = () => {
             publishedDate="Dec 3, 2024"
             title={blog.title}
             content={blog.content}
+            tags={blog.tags}
           />
         ))}
       </div>

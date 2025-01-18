@@ -6,6 +6,7 @@ interface BlogCardProps {
   title: string;
   content: string;
   publishedDate: string;
+  tags: string[]
 }
 
 const BlogCard = ({
@@ -14,6 +15,7 @@ const BlogCard = ({
   title,
   content,
   publishedDate,
+  tags
 }: BlogCardProps) => {
   return (
     <Link className="cursor-pointer" to={`/blog/${id}`}>
@@ -33,6 +35,11 @@ const BlogCard = ({
         <div className="text-sm text-gray-500 my-5">{`${Math.ceil(
           content.length / 100
         )} min read`}</div>
+        <div className="flex mt-2 mb-4">
+              {tags.map((tag) => (
+                <div className="text-sm mr-2 px-2.5 font-semibold py-1 rounded-full bg-slate-200">{tag}</div>
+              ))}
+            </div>
         <div className="border border-b border-gray-200"></div>
       </div>
     </Link>

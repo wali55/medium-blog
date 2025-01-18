@@ -21,6 +21,11 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
               Random catch phrase about author's ability to grab user's
               attention.
             </div>
+            <div className="flex ml-4 mt-2">
+              {blog.tags.map((tag) => (
+                <div className="text-sm mr-2 px-2.5 font-semibold py-1 rounded-full bg-slate-200">{tag}</div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

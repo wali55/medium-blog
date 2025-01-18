@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "Tag" AS ENUM ('Technology', 'Web', 'React', 'JavaScript', 'Python');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
@@ -15,6 +18,7 @@ CREATE TABLE "Post" (
     "content" TEXT NOT NULL,
     "published" BOOLEAN NOT NULL DEFAULT false,
     "authorId" TEXT NOT NULL,
+    "tags" "Tag"[],
 
     CONSTRAINT "Post_pkey" PRIMARY KEY ("id")
 );
